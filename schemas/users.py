@@ -27,3 +27,14 @@ class UserAuthResponse(BaseModel):
         from_attributes =  True,
         populate_by_name =  True,
     )
+
+class UserUpdateRequest(BaseModel):
+    nickname: str = None
+    avatar: str = None
+    gender: str = None
+    bio: str = None
+    phone: str = None
+
+class UserUpdateResponse(BaseModel):
+    old_password: str = Field(...,alias="oldPassword",description="旧密码")
+    new_password: str = Field(...,alias="newPassword",description="新密码")
