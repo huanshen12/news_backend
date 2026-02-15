@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import news, users
+from routers import favorite, news, users
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -26,3 +26,4 @@ async def say_hello(name: str):
 
 app.include_router(news.router)
 app.include_router(users.router)
+app.include_router(favorite.router)
